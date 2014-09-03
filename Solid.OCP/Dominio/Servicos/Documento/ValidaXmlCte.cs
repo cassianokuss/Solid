@@ -1,0 +1,38 @@
+﻿using System;
+
+namespace Solid.OCP.Dominio.Servicos.Documento
+{
+    public class ValidaXmlCte
+    {
+        private string _documento;
+
+        public void Validar(string documento)
+        {
+            if (string.IsNullOrEmpty(documento))
+            {
+                throw new Exception("Documento Inválido!");
+            }
+
+            _documento = documento;
+
+            ValidarEstruturaDoXml();
+            ValidarConteudoDoXml();
+        }
+
+        private void ValidarEstruturaDoXml()
+        {
+            if (!_documento.ToLower().Contains("cte"))
+            {
+                throw new Exception("Documento não é XML!");
+            }
+        }
+
+        private void ValidarConteudoDoXml()
+        {
+            if (!_documento.Contains("Numero"))
+            {
+                throw new Exception("XML inválido!");
+            }
+        }
+    }
+}
