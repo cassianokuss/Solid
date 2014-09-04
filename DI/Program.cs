@@ -1,20 +1,17 @@
-﻿using Castle.MicroKernel.Registration;
-using Castle.MicroKernel.Resolvers.SpecializedResolvers;
-using Castle.Windsor;
-using DI.Dominio.Repositorios;
-using DI.Dominio.Servicos.Documento;
-using DI.Dominio.Servicos.Documento.Factory;
-using DI.Dominio.Servicos.Documento.Validacoes;
-using DI.Infra;
-using DI.Infra.Notificaoes;
-
-namespace DI
+﻿namespace DI
 {
-    using Dominio.Entidades;
-    using Dominio.Servicos;
-
     using System;
     using System.Collections.Generic;
+    using Castle.MicroKernel.Registration;
+    using Castle.MicroKernel.Resolvers.SpecializedResolvers;
+    using Castle.Windsor;
+    using Dominio.Repositorios;
+    using Dominio.Servicos.Documento;
+    using Dominio.Servicos.Documento.Factory;
+    using Dominio.Servicos.Documento.Validacoes;
+    using Infra.Notificaoes;
+    using Dominio.Entidades;
+    using Dominio.Servicos;
 
     class Program
     {
@@ -24,6 +21,7 @@ namespace DI
         {
             // Receber documento, validar, armazenar e enviar mensagem notificando
 
+            #region Documentos
             IList<DocumentoXml> documentos = new List<DocumentoXml>();
 
             documentos.Add(new DocumentoXml()
@@ -61,6 +59,8 @@ namespace DI
 </CTe>
 "
             });
+
+            #endregion
 
             ConfigurarDI();
 
