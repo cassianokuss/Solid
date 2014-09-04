@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid.SRP", "Solid.SRP\Soli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid.OCP", "Solid.OCP\Solid.OCP.csproj", "{28B15160-AC2E-47D5-833A-9CDF669F52FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solid.DIP", "Solid.DIP\Solid.DIP.csproj", "{EBEC41EA-36F9-4330-B99F-1359229A8230}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI", "DI\DI.csproj", "{950CAF76-40ED-40B1-95A3-4216C5497B4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{28B15160-AC2E-47D5-833A-9CDF669F52FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28B15160-AC2E-47D5-833A-9CDF669F52FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28B15160-AC2E-47D5-833A-9CDF669F52FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBEC41EA-36F9-4330-B99F-1359229A8230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBEC41EA-36F9-4330-B99F-1359229A8230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBEC41EA-36F9-4330-B99F-1359229A8230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBEC41EA-36F9-4330-B99F-1359229A8230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950CAF76-40ED-40B1-95A3-4216C5497B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950CAF76-40ED-40B1-95A3-4216C5497B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950CAF76-40ED-40B1-95A3-4216C5497B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950CAF76-40ED-40B1-95A3-4216C5497B4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

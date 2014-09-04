@@ -1,4 +1,4 @@
-﻿namespace Solid.OCP.Dominio.Servicos
+﻿namespace Solid.DIP.Dominio.Servicos
 {
     using System;
     using Entidades;
