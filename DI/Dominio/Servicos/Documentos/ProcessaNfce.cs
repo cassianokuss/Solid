@@ -1,4 +1,8 @@
-﻿namespace DI.Dominio.Servicos.Documento
+﻿using DI.Dominio.Servicos.Documento.Validacoes;
+using DI.Infra;
+using DI.Infra.Notificaoes;
+
+namespace DI.Dominio.Servicos.Documento
 {
     using Entidades;
     using Factory;

@@ -1,18 +1,18 @@
-﻿namespace DI.Infra
+﻿namespace DI.Infra.Notificaoes
 {
     using System;
     using Dominio.Entidades;
 
-    public class Email : INotificacao
+    public class Sms : INotificacao
     {
         public void Enviar(string conteudo)
         {
-            Console.WriteLine("Enviando email: " + conteudo);
+            Console.WriteLine("Enviando SMS: " + conteudo);
         }
 
         public bool EnviarQuando(TipoDocumento tipo)
         {
-            return tipo == TipoDocumento.NFe || tipo == TipoDocumento.NFCe;
+            return tipo == TipoDocumento.CTe;
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace DI.Dominio.Servicos.Documento.Factory
+﻿using DI.Infra;
+using DI.Infra.Notificaoes;
+
+namespace DI.Dominio.Servicos.Documento.Factory
 {
     using System.Linq;
     using Entidades;

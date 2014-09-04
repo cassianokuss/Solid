@@ -4,7 +4,9 @@ using Castle.Windsor;
 using DI.Dominio.Repositorios;
 using DI.Dominio.Servicos.Documento;
 using DI.Dominio.Servicos.Documento.Factory;
+using DI.Dominio.Servicos.Documento.Validacoes;
 using DI.Infra;
+using DI.Infra.Notificaoes;
 
 namespace DI
 {
@@ -60,7 +62,7 @@ namespace DI
 "
             });
 
-            Configurar();
+            ConfigurarDI();
 
             foreach (var documento in documentos)
             {
@@ -70,7 +72,7 @@ namespace DI
             Console.ReadKey();
         }
 
-        private static void Configurar()
+        private static void ConfigurarDI()
         {
             _container = new WindsorContainer();
             _container.Kernel.Resolver.AddSubResolver(new ArrayResolver(_container.Kernel));

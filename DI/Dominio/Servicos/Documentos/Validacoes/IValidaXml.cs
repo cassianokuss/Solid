@@ -1,6 +1,6 @@
-﻿namespace DI.Dominio.Servicos.Documento
+﻿namespace DI.Dominio.Servicos.Documento.Validacoes
 {
-    using DI.Dominio.Entidades;
+    using Entidades;
 
     public interface IValidaXml
     {

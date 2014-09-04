@@ -1,5 +1,7 @@
-﻿namespace DI.Dominio.Entidades
+﻿namespace DI.Infra.Notificaoes
 {
+    using Dominio.Entidades;
+
     public interface INotificacao
     {
         void Enviar(string conteudo);

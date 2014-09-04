@@ -1,10 +1,9 @@
-﻿using DI.Dominio.Entidades;
-
-namespace DI.Dominio.Servicos.Documento
+﻿namespace DI.Dominio.Servicos.Documento.Validacoes
 {
     using System;
+    using Entidades;
 
-    public class ValidaXmlNfe : IValidaXml
+    public class ValidaXmlCte : IValidaXml
     {
         private string _documento;
 
@@ -23,12 +22,12 @@ namespace DI.Dominio.Servicos.Documento
 
         public bool ValidarQuando(TipoDocumento tipo)
         {
-            return tipo == TipoDocumento.NFe;
+            return tipo == TipoDocumento.CTe;
         }
 
         private void ValidarEstruturaDoXml()
         {
-            if (!_documento.ToLower().Contains("nfe"))
+            if (!_documento.ToLower().Contains("cte"))
             {
                 throw new Exception("Documento não é XML!");
             }
