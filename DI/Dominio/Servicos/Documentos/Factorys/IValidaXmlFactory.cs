@@ -1,7 +1,6 @@
-﻿using DI.Dominio.Servicos.Documento.Validacoes;
-
-namespace DI.Dominio.Servicos.Documento.Factory
+﻿namespace DI.Dominio.Servicos.Documentos.Factorys
 {
+    using Validacoes;
     using Entidades;
 
     public interface IValidaXmlFactory

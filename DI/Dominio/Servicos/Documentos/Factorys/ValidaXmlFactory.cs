@@ -1,7 +1,6 @@
-﻿using DI.Dominio.Servicos.Documento.Validacoes;
-
-namespace DI.Dominio.Servicos.Documento.Factory
+﻿namespace DI.Dominio.Servicos.Documentos.Factorys
 {
+    using Validacoes;
     using System.Linq;
     using Entidades;
 
@@ -16,7 +15,7 @@ namespace DI.Dominio.Servicos.Documento.Factory
 
         public IValidaXml ObterValidador(TipoDocumento tipo)
         {
-            return _validadores.FirstOrDefault(e => e.ValidarQuando(tipo));
+            return _validadores.FirstOrDefault(e => e.AplicavelQuando(tipo));
         }
     }
 }

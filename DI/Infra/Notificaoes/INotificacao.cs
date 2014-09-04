@@ -1,10 +1,9 @@
 ﻿namespace DI.Infra.Notificaoes
 {
-    using Dominio.Entidades;
+    using Dominio.Servicos;
 
-    public interface INotificacao
+    public interface INotificacao : IEstrategiaTipoDocumento
     {
         void Enviar(string conteudo);
-        bool EnviarQuando(TipoDocumento tipo);
     }
 }

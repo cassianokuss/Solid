@@ -1,4 +1,4 @@
-﻿namespace DI.Dominio.Servicos.Documento.Factory
+﻿namespace DI.Dominio.Servicos.Documentos.Factorys
 {
     using Entidades;
 

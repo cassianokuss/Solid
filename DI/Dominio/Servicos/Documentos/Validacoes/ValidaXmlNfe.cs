@@ -1,7 +1,7 @@
-﻿namespace DI.Dominio.Servicos.Documento.Validacoes
+﻿namespace DI.Dominio.Servicos.Documentos.Validacoes
 {
-    using Entidades;
     using System;
+    using Entidades;
 
     public class ValidaXmlNfe : IValidaXml
     {
@@ -20,7 +20,7 @@
             ValidarConteudoDoXml();
         }
 
-        public bool ValidarQuando(TipoDocumento tipo)
+        public bool AplicavelQuando(TipoDocumento tipo)
         {
             return tipo == TipoDocumento.NFe;
         }

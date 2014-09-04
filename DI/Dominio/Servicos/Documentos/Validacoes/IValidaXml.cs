@@ -1,10 +1,7 @@
-﻿namespace DI.Dominio.Servicos.Documento.Validacoes
+﻿namespace DI.Dominio.Servicos.Documentos.Validacoes
 {
-    using Entidades;
-
-    public interface IValidaXml
+    public interface IValidaXml : IEstrategiaTipoDocumento
     {
         void Validar(string documento);
-        bool ValidarQuando(TipoDocumento tipo);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DI.Dominio.Servicos.Documento.Factory
+﻿namespace DI.Dominio.Servicos.Documentos.Factorys
 {
     using System.Linq;
     using Entidades;
@@ -14,7 +14,7 @@
 
         public IProcessaDocumento ObterProcessaDocumento(TipoDocumento tipo)
         {
-            return _processaDocumentos.FirstOrDefault(e => e.ProcessarQuando(tipo));
+            return _processaDocumentos.FirstOrDefault(e => e.AplicavelQuando(tipo));
         }
     }
 }

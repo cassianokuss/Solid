@@ -1,9 +1,7 @@
-﻿using DI.Infra;
-using DI.Infra.Notificaoes;
-
-namespace DI.Dominio.Servicos.Documento.Factory
+﻿namespace DI.Dominio.Servicos.Documentos.Factorys
 {
     using System.Linq;
+    using Infra.Notificaoes;
     using Entidades;
 
     public class NotificacaoFactory : INotificacaoFactory
@@ -17,7 +15,7 @@ namespace DI.Dominio.Servicos.Documento.Factory
 
         public INotificacao ObterNotificacao(TipoDocumento tipo)
         {
-            return _notificacoes.FirstOrDefault(e => e.EnviarQuando(tipo));
+            return _notificacoes.FirstOrDefault(e => e.AplicavelQuando(tipo));
         }
     }
 }

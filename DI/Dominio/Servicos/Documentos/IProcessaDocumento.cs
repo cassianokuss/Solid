@@ -1,10 +1,7 @@
-﻿namespace DI.Dominio.Servicos.Documento
+﻿namespace DI.Dominio.Servicos.Documentos
 {
-    using Entidades;
-
-    public interface IProcessaDocumento
+    public interface IProcessaDocumento : IEstrategiaTipoDocumento
     {
         void Processar(string conteudo);
-        bool ProcessarQuando(TipoDocumento tipo);
     }
 }

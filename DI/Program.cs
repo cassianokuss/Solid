@@ -6,12 +6,12 @@
     using Castle.MicroKernel.Resolvers.SpecializedResolvers;
     using Castle.Windsor;
     using Dominio.Repositorios;
-    using Dominio.Servicos.Documento;
-    using Dominio.Servicos.Documento.Factory;
-    using Dominio.Servicos.Documento.Validacoes;
     using Infra.Notificaoes;
     using Dominio.Entidades;
     using Dominio.Servicos;
+    using Dominio.Servicos.Documentos;
+    using Dominio.Servicos.Documentos.Factorys;
+    using Dominio.Servicos.Documentos.Validacoes;
 
     class Program
     {

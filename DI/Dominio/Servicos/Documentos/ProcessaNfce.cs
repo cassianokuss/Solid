@@ -1,13 +1,11 @@
-﻿using DI.Dominio.Servicos.Documento.Validacoes;
-using DI.Infra;
+﻿using DI.Dominio.Servicos.Documentos.Factorys;
+using DI.Dominio.Servicos.Documentos.Validacoes;
 using DI.Infra.Notificaoes;
+using DI.Dominio.Entidades;
+using DI.Dominio.Repositorios;
 
-namespace DI.Dominio.Servicos.Documento
+namespace DI.Dominio.Servicos.Documentos
 {
-    using Entidades;
-    using Factory;
-    using Repositorios;
-
     public class ProcessaNfce : IProcessaDocumento
     {
         private readonly IValidaXml _validacao;
@@ -33,7 +31,7 @@ namespace DI.Dominio.Servicos.Documento
             _notificacao.Enviar("Nfce enviada! " + conteudo);
         }
 
-        public bool ProcessarQuando(TipoDocumento tipo)
+        public bool AplicavelQuando(TipoDocumento tipo)
         {
             return tipo == TipoDocumento.NFCe;
         }
