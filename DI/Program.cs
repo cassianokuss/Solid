@@ -76,45 +76,24 @@ namespace DI
             _container.Kernel.Resolver.AddSubResolver(new ArrayResolver(_container.Kernel));
 
             _container
-                .Register(Component
-                              .For<IProcessa>()
-                              .ImplementedBy<Processa>())
-                .Register(Component
-                              .For<IRepositorioBase<Nfe>>()
-                              .ImplementedBy<RepositorioBase<Nfe>>())
-                .Register(Component
-                              .For<IRepositorioBase<Nfce>>()
-                              .ImplementedBy<RepositorioBase<Nfce>>())
-                .Register(Component
-                              .For<IRepositorioBase<Cte>>()
-                              .ImplementedBy<RepositorioBase<Cte>>())
-                .Register(Component
-                              .For<IProcessaDocumentoFactory>()
-                              .ImplementedBy<ProcessaDocumentoFactory>())
-                .Register(Component
-                              .For<IProcessaDocumento>()
-                              .ImplementedBy<ProcessaNfe>())
-                .Register(Component
-                              .For<IProcessaDocumento>()
-                              .ImplementedBy<ProcessaNfce>())
-                .Register(Component
-                              .For<IProcessaDocumento>()
-                              .ImplementedBy<ProcessaCte>())
-                .Register(Component
-                              .For<ValidaXmlNfe>())
-                .Register(Component
-                              .For<ValidaXmlNfce>())
-                .Register(Component
-                              .For<ValidaXmlCte>())
-                .Register(Component
-                         .For<INotificacao>()
-                         .ImplementedBy<Email>())
-                .Register(Component
-                              .For<INotificacaoFactory>()
-                              .ImplementedBy<NotificacaoFactory>())
-                .Register(Component
-                         .For<INotificacao>()
-                         .ImplementedBy<Sms>());
+                .Register(Component.For<IRepositorioBase<Nfe>>().ImplementedBy<RepositorioBase<Nfe>>())
+                .Register(Component.For<IRepositorioBase<Nfce>>().ImplementedBy<RepositorioBase<Nfce>>())
+                .Register(Component.For<IRepositorioBase<Cte>>().ImplementedBy<RepositorioBase<Cte>>())
+
+                .Register(Component.For<IProcessa>().ImplementedBy<Processa>())
+                .Register(Component.For<IProcessaDocumentoFactory>().ImplementedBy<ProcessaDocumentoFactory>())
+                .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaNfe>())
+                .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaNfce>())
+                .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaCte>())
+
+                .Register(Component.For<IValidaXmlFactory>().ImplementedBy<ValidaXmlFactory>())
+                .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlNfe>())
+                .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlNfce>())
+                .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlCte>())
+
+                .Register(Component.For<INotificacaoFactory>().ImplementedBy<NotificacaoFactory>())
+                .Register(Component.For<INotificacao>().ImplementedBy<Email>())
+                .Register(Component.For<INotificacao>().ImplementedBy<Sms>());
         }
     }
 }

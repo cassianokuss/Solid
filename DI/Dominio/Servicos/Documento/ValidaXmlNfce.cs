@@ -1,8 +1,9 @@
 ﻿namespace DI.Dominio.Servicos.Documento
 {
     using System;
+    using Entidades;
 
-    public class ValidaXmlNfce
+    public class ValidaXmlNfce : IValidaXml
     {
         private string _documento;
 
@@ -17,6 +18,11 @@
 
             ValidarEstruturaDoXml();
             ValidarConteudoDoXml();
+        }
+
+        public bool ValidarQuando(TipoDocumento tipo)
+        {
+            return tipo == TipoDocumento.NFCe;
         }
 
         private void ValidarEstruturaDoXml()

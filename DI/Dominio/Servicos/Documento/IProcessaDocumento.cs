@@ -5,6 +5,6 @@
     public interface IProcessaDocumento
     {
         void Processar(string conteudo);
-        bool EhAplicavelQuando(TipoDocumento tipo);
+        bool ProcessarQuando(TipoDocumento tipo);
     }
 }

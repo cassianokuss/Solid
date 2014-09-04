@@ -6,13 +6,13 @@
 
     public class ProcessaNfce : IProcessaDocumento
     {
-        private readonly ValidaXmlNfce _validacao;
+        private readonly IValidaXml _validacao;
         private readonly IRepositorioBase<Nfce> _nfces;
         private readonly INotificacao _notificacao;
 
-        public ProcessaNfce(IRepositorioBase<Nfce> nfces, ValidaXmlNfce validacao, INotificacaoFactory notificacaoFactory)
+        public ProcessaNfce(IRepositorioBase<Nfce> nfces, IValidaXmlFactory validaXmlFactory, INotificacaoFactory notificacaoFactory)
         {
-            _validacao = validacao;
+            _validacao = validaXmlFactory.ObterValidador(TipoDocumento.NFCe);
             _nfces = nfces;
             _notificacao = notificacaoFactory.ObterNotificacao(TipoDocumento.NFCe);
         }
@@ -29,7 +29,7 @@
             _notificacao.Enviar("Nfce enviada! " + conteudo);
         }
 
-        public bool EhAplicavelQuando(TipoDocumento tipo)
+        public bool ProcessarQuando(TipoDocumento tipo)
         {
             return tipo == TipoDocumento.NFCe;
         }

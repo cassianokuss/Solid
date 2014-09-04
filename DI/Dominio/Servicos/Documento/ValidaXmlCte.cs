@@ -1,8 +1,9 @@
 ﻿namespace DI.Dominio.Servicos.Documento
 {
     using System;
+    using Entidades;
 
-    public class ValidaXmlCte
+    public class ValidaXmlCte : IValidaXml
     {
         private string _documento;
 
@@ -17,6 +18,11 @@
 
             ValidarEstruturaDoXml();
             ValidarConteudoDoXml();
+        }
+
+        public bool ValidarQuando(TipoDocumento tipo)
+        {
+            return tipo == TipoDocumento.CTe;
         }
 
         private void ValidarEstruturaDoXml()

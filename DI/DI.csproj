@@ -55,8 +55,11 @@
     <Compile Include="Dominio\Entidades\TipoDocumento.cs" />
     <Compile Include="Dominio\Repositorios\RepositorioBase.cs" />
     <Compile Include="Dominio\Repositorios\IRepositorioBase.cs" />
+    <Compile Include="Dominio\Servicos\Documento\Factory\ValidaXmlFactory.cs" />
+    <Compile Include="Dominio\Servicos\Documento\Factory\IValidaXmlFactory.cs" />
     <Compile Include="Dominio\Servicos\Documento\Factory\INotificacaoFactory.cs" />
     <Compile Include="Dominio\Servicos\Documento\Factory\NotificacaoFactory.cs" />
+    <Compile Include="Dominio\Servicos\Documento\IValidaXml.cs" />
     <Compile Include="Dominio\Servicos\Processa.cs" />
     <Compile Include="Dominio\Servicos\IProcessa.cs" />
     <Compile Include="Dominio\Servicos\Documento\Factory\ProcessaDocumentoFactory.cs" />
