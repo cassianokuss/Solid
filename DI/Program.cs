@@ -38,6 +38,18 @@
 
             documentos.Add(new DocumentoXml()
             {
+                Tipo = TipoDocumento.NFe,
+                Conteudo = @"
+<?xml version=""1.0"" encoding=""UTF-8"" ?> 
+<NFxe>
+    <Numero>999</Numero>
+    <Valor>99999,67</Valor>
+</NFxe>
+"
+            });
+
+            documentos.Add(new DocumentoXml()
+            {
                 Tipo = TipoDocumento.NFCe,
                 Conteudo = @"
 <?xml version=""1.0"" encoding=""UTF-8"" ?> 
@@ -66,7 +78,14 @@
 
             foreach (var documento in documentos)
             {
-                _container.Resolve<IProcessa>().ProcessarDocumento(documento);
+                try
+                {
+                    _container.Resolve<IProcessa>().ProcessarDocumento(documento);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("****************" + ex.Message + "****************\n");
+                }
             }
 
             Console.ReadKey();
@@ -82,18 +101,18 @@
                 .Register(Component.For<IRepositorioBase<Nfce>>().ImplementedBy<RepositorioBase<Nfce>>())
                 .Register(Component.For<IRepositorioBase<Cte>>().ImplementedBy<RepositorioBase<Cte>>())
 
-                .Register(Component.For<IProcessa>().ImplementedBy<Processa>())
-                .Register(Component.For<IProcessaDocumentoFactory>().ImplementedBy<ProcessaDocumentoFactory>())
+                .Register(Component.For<IProcessa>().ImplementedBy<Processa>().LifeStyle.Singleton)
+                .Register(Component.For<IProcessaDocumentoFactory>().ImplementedBy<ProcessaDocumentoFactory>().LifeStyle.Singleton)
                 .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaNfe>())
                 .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaNfce>())
                 .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaCte>())
 
-                .Register(Component.For<IValidaXmlFactory>().ImplementedBy<ValidaXmlFactory>())
+                .Register(Component.For<IValidaXmlFactory>().ImplementedBy<ValidaXmlFactory>().LifeStyle.Singleton)
                 .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlNfe>())
                 .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlNfce>())
                 .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlCte>())
 
-                .Register(Component.For<INotificacaoFactory>().ImplementedBy<NotificacaoFactory>())
+                .Register(Component.For<INotificacaoFactory>().ImplementedBy<NotificacaoFactory>().LifeStyle.Singleton)
                 .Register(Component.For<INotificacao>().ImplementedBy<Email>())
                 .Register(Component.For<INotificacao>().ImplementedBy<Sms>());
         }
