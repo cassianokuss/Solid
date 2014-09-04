@@ -108,7 +108,13 @@ namespace DI
                               .For<ValidaXmlCte>())
                 .Register(Component
                          .For<INotificacao>()
-                         .ImplementedBy<Email>());
+                         .ImplementedBy<Email>())
+                .Register(Component
+                              .For<INotificacaoFactory>()
+                              .ImplementedBy<NotificacaoFactory>())
+                .Register(Component
+                         .For<INotificacao>()
+                         .ImplementedBy<Sms>());
         }
     }
 }

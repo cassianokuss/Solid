@@ -1,7 +1,7 @@
 ﻿namespace DI.Dominio.Servicos.Documento
 {
     using Entidades;
-    using Infra;
+    using Factory;
     using Repositorios;
 
     public class ProcessaNfce : IProcessaDocumento
@@ -10,11 +10,11 @@
         private readonly IRepositorioBase<Nfce> _nfces;
         private readonly INotificacao _notificacao;
 
-        public ProcessaNfce(IRepositorioBase<Nfce> nfces, ValidaXmlNfce validacao, INotificacao notificacao)
+        public ProcessaNfce(IRepositorioBase<Nfce> nfces, ValidaXmlNfce validacao, INotificacaoFactory notificacaoFactory)
         {
             _validacao = validacao;
             _nfces = nfces;
-            _notificacao = notificacao;
+            _notificacao = notificacaoFactory.ObterNotificacao(TipoDocumento.NFCe);
         }
 
         public void Processar(string conteudo)

@@ -1,7 +1,7 @@
 ﻿namespace DI.Dominio.Servicos.Documento
 {
     using Entidades;
-    using Infra;
+    using Factory;
     using Repositorios;
 
     public class ProcessaCte : IProcessaDocumento
@@ -10,11 +10,11 @@
         private readonly IRepositorioBase<Cte> _ctes;
         private readonly INotificacao _notificacao;
 
-        public ProcessaCte(IRepositorioBase<Cte> ctes, ValidaXmlCte validacao, INotificacao notificacao)
+        public ProcessaCte(IRepositorioBase<Cte> ctes, ValidaXmlCte validacao, INotificacaoFactory notificacaoFactory)
         {
             _validacao = validacao;
             _ctes = ctes;
-            _notificacao = notificacao;
+            _notificacao = notificacaoFactory.ObterNotificacao(TipoDocumento.CTe);
         }
 
         public void Processar(string conteudo)

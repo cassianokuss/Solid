@@ -9,5 +9,10 @@
         {
             Console.WriteLine("Enviando SMS: " + conteudo);
         }
+
+        public bool EnviarQuando(TipoDocumento tipo)
+        {
+            return tipo == TipoDocumento.CTe;
+        }
     }
 }
