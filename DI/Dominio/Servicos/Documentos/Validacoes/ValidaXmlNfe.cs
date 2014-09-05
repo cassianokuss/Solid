@@ -5,8 +5,6 @@
 
     public class ValidaXmlNfe : IValidaXml
     {
-        private string _documento;
-
         public void Validar(string documento)
         {
             if (string.IsNullOrEmpty(documento))
@@ -14,10 +12,8 @@
                 throw new Exception("Documento Inválido!");
             }
 
-            _documento = documento;
-
-            ValidarEstruturaDoXml();
-            ValidarConteudoDoXml();
+            ValidarEstruturaDoXml(documento);
+            ValidarConteudoDoXml(documento);
         }
 
         public bool AplicavelQuando(TipoDocumento tipo)
@@ -25,17 +21,17 @@
             return tipo == TipoDocumento.NFe;
         }
 
-        private void ValidarEstruturaDoXml()
+        public void ValidarEstruturaDoXml(string documento)
         {
-            if (!_documento.ToLower().Contains("nfe"))
+            if (!documento.ToLower().Contains("nfe"))
             {
                 throw new Exception("Documento não é XML!");
             }
         }
 
-        private void ValidarConteudoDoXml()
+        public void ValidarConteudoDoXml(string documento)
         {
-            if (!_documento.Contains("Numero"))
+            if (!documento.Contains("Numero"))
             {
                 throw new Exception("XML inválido!");
             }

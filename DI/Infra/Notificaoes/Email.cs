@@ -1,7 +1,7 @@
 ﻿namespace DI.Infra.Notificaoes
 {
     using System;
-    using DI.Dominio.Entidades;
+    using Dominio.Entidades;
 
     public class Email : INotificacao
     {

@@ -1,11 +1,11 @@
-﻿using DI.Dominio.Servicos.Documentos.Factorys;
-using DI.Dominio.Servicos.Documentos.Validacoes;
-using DI.Infra.Notificaoes;
-using DI.Dominio.Entidades;
-using DI.Dominio.Repositorios;
-
-namespace DI.Dominio.Servicos.Documentos
+﻿namespace DI.Dominio.Servicos.Documentos
 {
+    using Factorys;
+    using Validacoes;
+    using Infra.Notificaoes;
+    using Entidades;
+    using Repositorios;
+
     public class ProcessaNfe : IProcessaDocumento
     {
         private readonly IValidaXml _validacao;

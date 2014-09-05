@@ -1,7 +1,6 @@
-﻿using DI.Dominio.Servicos.Documentos.Factorys;
-
-namespace DI.Dominio.Servicos
+﻿namespace DI.Dominio.Servicos
 {
+    using Documentos.Factorys;
     using Entidades;
 
     public class Processa : IProcessa
