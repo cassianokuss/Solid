@@ -8,27 +8,27 @@
 
     public class ProcessadorDeCte : ProcessadorDeDocumento
     {
-        private readonly ValidadorDeXml _validacao;
+        private readonly ValidadorDeXml _validador;
         private readonly Repositorio<Cte> _ctes;
-        private readonly Notificacao _notificacao;
+        private readonly Notificador _notificador;
 
         public ProcessadorDeCte(Repositorio<Cte> ctes, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {
-            _validacao = validaXmlFactory.ObterValidador(TipoDocumento.CTe);
+            _validador = validaXmlFactory.ObterValidador(TipoDocumento.CTe);
             _ctes = ctes;
-            _notificacao = notificacaoFactory.ObterNotificacao(TipoDocumento.CTe);
+            _notificador = notificacaoFactory.ObterNotificacao(TipoDocumento.CTe);
         }
 
         public void Processar(string conteudo)
         {
-            _validacao.Validar(conteudo);
+            _validador.Validar(conteudo);
             var cte = new Cte()
                 {
                     PropriedadesDoCTe = conteudo
                 };
 
             _ctes.Armazenar(cte);
-            _notificacao.Enviar("Cte enviado! " + conteudo);
+            _notificador.Enviar("Cte enviado! " + conteudo);
         }
 
         public bool AplicarQuando(TipoDocumento tipo)

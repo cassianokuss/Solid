@@ -3,16 +3,16 @@
     using System;
     using Dominio.Entidades;
 
-    public class Email : Notificacao
+    public class NotificadorPorSms : Notificador
     {
         public void Enviar(string conteudo)
         {
-            Console.WriteLine("Enviando email: " + conteudo);
+            Console.WriteLine("Enviando SMS: " + conteudo);
         }
 
         public bool AplicarQuando(TipoDocumento tipo)
         {
-            return tipo == TipoDocumento.NFe || tipo == TipoDocumento.NFCe;
+            return tipo == TipoDocumento.CTe;
         }
     }
 }

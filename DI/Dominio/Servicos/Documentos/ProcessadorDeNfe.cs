@@ -8,27 +8,27 @@
 
     public class ProcessadorDeNfe : ProcessadorDeDocumento
     {
-        private readonly ValidadorDeXml _validacao;
+        private readonly ValidadorDeXml _validador;
         private readonly Repositorio<Nfe> _nfes;
-        private readonly Notificacao _notificacao;
+        private readonly Notificador _notificador;
 
         public ProcessadorDeNfe(Repositorio<Nfe> nfes, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {
-            _validacao = validaXmlFactory.ObterValidador(TipoDocumento.NFe);
+            _validador = validaXmlFactory.ObterValidador(TipoDocumento.NFe);
             _nfes = nfes;
-            _notificacao = notificacaoFactory.ObterNotificacao(TipoDocumento.NFe);
+            _notificador = notificacaoFactory.ObterNotificacao(TipoDocumento.NFe);
         }
 
         public void Processar(string conteudo)
         {
-            _validacao.Validar(conteudo);
+            _validador.Validar(conteudo);
             var nfe = new Nfe()
                 {
                     PropriedadesDaNFe = conteudo
                 };
 
             _nfes.Armazenar(nfe);
-            _notificacao.Enviar("NFe enviada! " + conteudo);
+            _notificador.Enviar("NFe enviada! " + conteudo);
         }
 
         public bool AplicarQuando(TipoDocumento tipo)
