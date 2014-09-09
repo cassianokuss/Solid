@@ -4,6 +4,6 @@
 
     public interface EstrategiaPorTipoDeDocumento
     {
-        bool AplicavelQuando(TipoDocumento tipo); 
+        bool AplicarQuando(TipoDocumento tipo); 
     }
 }

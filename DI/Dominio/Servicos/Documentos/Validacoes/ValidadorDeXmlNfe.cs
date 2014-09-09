@@ -16,7 +16,7 @@
             ValidarConteudoDoXml(documento);
         }
 
-        public bool AplicavelQuando(TipoDocumento tipo)
+        public bool AplicarQuando(TipoDocumento tipo)
         {
             return tipo == TipoDocumento.NFe;
         }

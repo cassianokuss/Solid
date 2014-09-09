@@ -31,7 +31,7 @@
             _notificacao.Enviar("Nfce enviada! " + conteudo);
         }
 
-        public bool AplicavelQuando(TipoDocumento tipo)
+        public bool AplicarQuando(TipoDocumento tipo)
         {
             return tipo == TipoDocumento.NFCe;
         }

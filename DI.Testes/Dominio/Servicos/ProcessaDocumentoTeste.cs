@@ -32,7 +32,7 @@ namespace DI.Testes.Dominio.Servicos
 
             ProcessadorDeDocumento processa = new ProcessadorDeCte(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
             processa.Processar("");
-            Assert.IsTrue(processa.AplicavelQuando(TipoDocumento.CTe));
+            Assert.IsTrue(processa.AplicarQuando(TipoDocumento.CTe));
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace DI.Testes.Dominio.Servicos
 
             ProcessadorDeDocumento processa = new ProcessadorDeNfe(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
             processa.Processar("");
-            Assert.IsTrue(processa.AplicavelQuando(TipoDocumento.NFe));
+            Assert.IsTrue(processa.AplicarQuando(TipoDocumento.NFe));
         }
 
         [TestMethod]
@@ -78,7 +78,7 @@ namespace DI.Testes.Dominio.Servicos
 
             ProcessadorDeDocumento processa = new ProcessadorDeNfce(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
             processa.Processar("");
-            Assert.IsTrue(processa.AplicavelQuando(TipoDocumento.NFCe));
+            Assert.IsTrue(processa.AplicarQuando(TipoDocumento.NFCe));
         }
     }
 }

@@ -15,7 +15,7 @@
 
         public ValidadorDeXml ObterValidador(TipoDocumento tipo)
         {
-            return _validadores.FirstOrDefault(e => e.AplicavelQuando(tipo));
+            return _validadores.FirstOrDefault(e => e.AplicarQuando(tipo));
         }
     }
 }

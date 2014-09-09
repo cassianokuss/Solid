@@ -21,7 +21,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 
             ValidadorDeXml valida = new ValidadorDeXmlCte();
             valida.Validar(doc);
-            Assert.IsTrue(valida.AplicavelQuando(TipoDocumento.CTe));
+            Assert.IsTrue(valida.AplicarQuando(TipoDocumento.CTe));
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 
             var valida = new ValidadorDeXmlCte();
             valida.ValidarEstruturaDoXml(doc);
-            Assert.IsTrue(valida.AplicavelQuando(TipoDocumento.CTe));
+            Assert.IsTrue(valida.AplicarQuando(TipoDocumento.CTe));
         }
 
 

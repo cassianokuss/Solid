@@ -10,7 +10,7 @@
             Console.WriteLine("Enviando SMS: " + conteudo);
         }
 
-        public bool AplicavelQuando(TipoDocumento tipo)
+        public bool AplicarQuando(TipoDocumento tipo)
         {
             return tipo == TipoDocumento.CTe;
         }

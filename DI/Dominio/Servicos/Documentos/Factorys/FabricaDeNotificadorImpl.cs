@@ -15,7 +15,7 @@
 
         public INotificacao ObterNotificacao(TipoDocumento tipo)
         {
-            return _notificacoes.FirstOrDefault(e => e.AplicavelQuando(tipo));
+            return _notificacoes.FirstOrDefault(e => e.AplicarQuando(tipo));
         }
     }
 }

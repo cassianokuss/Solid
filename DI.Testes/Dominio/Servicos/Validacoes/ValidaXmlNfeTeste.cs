@@ -21,7 +21,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 
             ValidadorDeXml valida = new ValidadorDeXmlNfe();
             valida.Validar(doc);
-            Assert.IsTrue(valida.AplicavelQuando(TipoDocumento.NFe));
+            Assert.IsTrue(valida.AplicarQuando(TipoDocumento.NFe));
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 
             var valida = new ValidadorDeXmlNfe();
             valida.ValidarEstruturaDoXml(doc);
-            Assert.IsTrue(valida.AplicavelQuando(TipoDocumento.NFe));
+            Assert.IsTrue(valida.AplicarQuando(TipoDocumento.NFe));
         }
 
 

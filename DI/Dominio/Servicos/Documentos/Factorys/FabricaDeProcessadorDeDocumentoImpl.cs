@@ -14,7 +14,7 @@
 
         public ProcessadorDeDocumento ObterProcessaDocumento(TipoDocumento tipo)
         {
-            return _processaDocumentos.FirstOrDefault(e => e.AplicavelQuando(tipo));
+            return _processaDocumentos.FirstOrDefault(e => e.AplicarQuando(tipo));
         }
     }
 }

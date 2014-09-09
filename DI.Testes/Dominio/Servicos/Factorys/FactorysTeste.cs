@@ -16,7 +16,7 @@ namespace DI.Testes.Dominio.Servicos.Factorys
         public void ValidaXmlFactoryTeste()
         {
             var validador = new Mock<ValidadorDeXml>();
-            validador.Setup(e => e.AplicavelQuando(TipoDocumento.NFe)).Returns(true);
+            validador.Setup(e => e.AplicarQuando(TipoDocumento.NFe)).Returns(true);
             FabricaDeValidadorDeXml factory = new FabricaDeValidadorDeXmlImpl(new[] { validador.Object });
             Assert.IsTrue(factory.ObterValidador(TipoDocumento.NFe) != null);
         }
@@ -25,7 +25,7 @@ namespace DI.Testes.Dominio.Servicos.Factorys
         public void ProcessaDocumentoFactoryTeste()
         {
             var validador = new Mock<ProcessadorDeDocumento>();
-            validador.Setup(e => e.AplicavelQuando(TipoDocumento.NFe)).Returns(true);
+            validador.Setup(e => e.AplicarQuando(TipoDocumento.NFe)).Returns(true);
             FabricaDeProcessadorDeDocumento factory = new FabricaDeProcessadorDeDocumentoImpl(new[] { validador.Object });
             Assert.IsTrue(factory.ObterProcessaDocumento(TipoDocumento.NFe) != null);
         }
@@ -34,7 +34,7 @@ namespace DI.Testes.Dominio.Servicos.Factorys
         public void NotificacaoFactoryTeste()
         {
             var validador = new Mock<INotificacao>();
-            validador.Setup(e => e.AplicavelQuando(TipoDocumento.NFe)).Returns(true);
+            validador.Setup(e => e.AplicarQuando(TipoDocumento.NFe)).Returns(true);
             FabricaDeNotificador factory = new FabricaDeNotificadorImpl(new[] { validador.Object });
             Assert.IsTrue(factory.ObterNotificacao(TipoDocumento.NFe) != null);
         }
