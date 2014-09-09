@@ -10,7 +10,8 @@
     using Dominio.Entidades;
     using Dominio.Servicos;
     using Dominio.Servicos.Documentos;
-    using Dominio.Servicos.Documentos.Factorys;
+    using Dominio.Servicos.Documentos.Fabricas;
+
     using Dominio.Servicos.Documentos.Validacoes;
 
     class Program

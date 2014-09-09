@@ -1,4 +1,4 @@
-﻿namespace DI.Dominio.Servicos.Documentos.Factorys
+﻿namespace DI.Dominio.Servicos.Documentos.Fabricas
 {
     using System.Linq;
     using Infra.Notificaoes;

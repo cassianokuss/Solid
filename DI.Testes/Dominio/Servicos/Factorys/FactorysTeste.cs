@@ -1,7 +1,7 @@
 ﻿using System;
 using DI.Dominio.Entidades;
 using DI.Dominio.Servicos.Documentos;
-using DI.Dominio.Servicos.Documentos.Factorys;
+using DI.Dominio.Servicos.Documentos.Fabricas;
 using DI.Dominio.Servicos.Documentos.Validacoes;
 using DI.Infra.Notificaoes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
