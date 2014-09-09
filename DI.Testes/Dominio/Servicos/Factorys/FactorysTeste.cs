@@ -33,7 +33,7 @@ namespace DI.Testes.Dominio.Servicos.Factorys
         [TestMethod]
         public void NotificacaoFactoryTeste()
         {
-            var validador = new Mock<INotificacao>();
+            var validador = new Mock<Notificacao>();
             validador.Setup(e => e.AplicarQuando(TipoDocumento.NFe)).Returns(true);
             FabricaDeNotificador factory = new FabricaDeNotificadorImpl(new[] { validador.Object });
             Assert.IsTrue(factory.ObterNotificacao(TipoDocumento.NFe) != null);

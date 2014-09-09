@@ -10,7 +10,7 @@ namespace DI.Testes.Infra.Notificaoes
         [TestMethod]
         public void NotificarPorEmailNFe()
         {
-            INotificacao notificacao = new Email();
+            Notificacao notificacao = new Email();
             notificacao.Enviar("Teste");
             Assert.IsTrue(notificacao.AplicarQuando(TipoDocumento.NFe));
         }
@@ -18,7 +18,7 @@ namespace DI.Testes.Infra.Notificaoes
         [TestMethod]
         public void NotificarPorEmailNFCe()
         {
-            INotificacao notificacao = new Email();
+            Notificacao notificacao = new Email();
             notificacao.Enviar("Teste");
             Assert.IsTrue(notificacao.AplicarQuando(TipoDocumento.NFCe));
         }
@@ -26,7 +26,7 @@ namespace DI.Testes.Infra.Notificaoes
         [TestMethod]
         public void NotificarPorSms()
         {
-            INotificacao notificacao = new Sms();
+            Notificacao notificacao = new Sms();
             notificacao.Enviar("Teste");
             Assert.IsTrue(notificacao.AplicarQuando(TipoDocumento.CTe));
         }

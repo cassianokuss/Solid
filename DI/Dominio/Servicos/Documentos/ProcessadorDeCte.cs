@@ -10,7 +10,7 @@
     {
         private readonly ValidadorDeXml _validacao;
         private readonly Repositorio<Cte> _ctes;
-        private readonly INotificacao _notificacao;
+        private readonly Notificacao _notificacao;
 
         public ProcessadorDeCte(Repositorio<Cte> ctes, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {

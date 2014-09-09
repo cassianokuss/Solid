@@ -24,7 +24,7 @@ namespace DI.Testes.Dominio.Servicos
             var validaXmlFactory = new Mock<FabricaDeValidadorDeXml>();
             validaXmlFactory.Setup(e => e.ObterValidador(TipoDocumento.CTe)).Returns(validaXmlCte.Object);
 
-            var notificacao = new Mock<INotificacao>();
+            var notificacao = new Mock<Notificacao>();
             notificacao.Setup(e => e.Enviar(""));
 
             var notificacaoFactory = new Mock<FabricaDeNotificador>();
@@ -47,7 +47,7 @@ namespace DI.Testes.Dominio.Servicos
             var validaXmlFactory = new Mock<FabricaDeValidadorDeXml>();
             validaXmlFactory.Setup(e => e.ObterValidador(TipoDocumento.NFe)).Returns(validaXmlNfe.Object);
 
-            var notificacao = new Mock<INotificacao>();
+            var notificacao = new Mock<Notificacao>();
             notificacao.Setup(e => e.Enviar(""));
 
             var notificacaoFactory = new Mock<FabricaDeNotificador>();
@@ -70,7 +70,7 @@ namespace DI.Testes.Dominio.Servicos
             var validaXmlFactory = new Mock<FabricaDeValidadorDeXml>();
             validaXmlFactory.Setup(e => e.ObterValidador(TipoDocumento.NFCe)).Returns(validaXmlNfce.Object);
 
-            var notificacao = new Mock<INotificacao>();
+            var notificacao = new Mock<Notificacao>();
             notificacao.Setup(e => e.Enviar(""));
 
             var notificacaoFactory = new Mock<FabricaDeNotificador>();

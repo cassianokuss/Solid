@@ -3,7 +3,7 @@
     using System;
     using Dominio.Entidades;
 
-    public class Sms : INotificacao
+    public class Sms : Notificacao
     {
         public void Enviar(string conteudo)
         {

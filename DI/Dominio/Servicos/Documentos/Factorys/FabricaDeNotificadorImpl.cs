@@ -6,14 +6,14 @@
 
     public class FabricaDeNotificadorImpl : FabricaDeNotificador
     {
-        private readonly INotificacao[] _notificacoes;
+        private readonly Notificacao[] _notificacoes;
 
-        public FabricaDeNotificadorImpl(params INotificacao[] notificacoes)
+        public FabricaDeNotificadorImpl(params Notificacao[] notificacoes)
         {
             _notificacoes = notificacoes;
         }
 
-        public INotificacao ObterNotificacao(TipoDocumento tipo)
+        public Notificacao ObterNotificacao(TipoDocumento tipo)
         {
             return _notificacoes.FirstOrDefault(e => e.AplicarQuando(tipo));
         }

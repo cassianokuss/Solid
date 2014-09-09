@@ -10,7 +10,7 @@
     {
         private readonly ValidadorDeXml _validacao;
         private readonly Repositorio<Nfce> _nfces;
-        private readonly INotificacao _notificacao;
+        private readonly Notificacao _notificacao;
 
         public ProcessadorDeNfce(Repositorio<Nfce> nfces, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {

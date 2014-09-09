@@ -113,8 +113,8 @@
                 .Register(Component.For<ValidadorDeXml>().ImplementedBy<ValidadorDeXmlCte>())
 
                 .Register(Component.For<FabricaDeNotificador>().ImplementedBy<FabricaDeNotificadorImpl>().LifeStyle.Singleton)
-                .Register(Component.For<INotificacao>().ImplementedBy<Email>())
-                .Register(Component.For<INotificacao>().ImplementedBy<Sms>());
+                .Register(Component.For<Notificacao>().ImplementedBy<Email>())
+                .Register(Component.For<Notificacao>().ImplementedBy<Sms>());
         }
     }
 }

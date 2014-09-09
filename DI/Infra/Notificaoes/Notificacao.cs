@@ -2,7 +2,7 @@
 {
     using Dominio.Servicos;
 
-    public interface INotificacao : EstrategiaPorTipoDeDocumento
+    public interface Notificacao : EstrategiaPorTipoDeDocumento
     {
         void Enviar(string conteudo);
     }

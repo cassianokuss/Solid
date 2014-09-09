@@ -5,6 +5,6 @@
 
     public interface FabricaDeNotificador
     {
-        INotificacao ObterNotificacao(TipoDocumento tipo);
+        Notificacao ObterNotificacao(TipoDocumento tipo);
     }
 }
