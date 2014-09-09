@@ -16,7 +16,7 @@
         {
             _validador = validaXmlFactory.ObterValidador(TipoDocumento.CTe);
             _ctes = ctes;
-            _notificador = notificacaoFactory.ObterNotificacao(TipoDocumento.CTe);
+            _notificador = notificacaoFactory.ObterNotificador(TipoDocumento.CTe);
         }
 
         public void Processar(string conteudo)

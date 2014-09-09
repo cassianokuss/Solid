@@ -5,16 +5,16 @@
 
     public class FabricaDeProcessadorDeDocumentoImpl : FabricaDeProcessadorDeDocumento
     {
-        private readonly ProcessadorDeDocumento[] _processaDocumentos;
+        private readonly ProcessadorDeDocumento[] _processadoresDeDocumentos;
 
-        public FabricaDeProcessadorDeDocumentoImpl(params ProcessadorDeDocumento[] processaDocumentos)
+        public FabricaDeProcessadorDeDocumentoImpl(params ProcessadorDeDocumento[] processadoresDeDocumentos)
         {
-            _processaDocumentos = processaDocumentos;
+            _processadoresDeDocumentos = processadoresDeDocumentos;
         }
 
         public ProcessadorDeDocumento ObterProcessaDocumento(TipoDocumento tipo)
         {
-            return _processaDocumentos.FirstOrDefault(e => e.AplicarQuando(tipo));
+            return _processadoresDeDocumentos.FirstOrDefault(e => e.AplicarQuando(tipo));
         }
     }
 }

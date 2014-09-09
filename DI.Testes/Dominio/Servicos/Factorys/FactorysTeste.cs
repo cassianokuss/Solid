@@ -36,7 +36,7 @@ namespace DI.Testes.Dominio.Servicos.Factorys
             var validador = new Mock<Notificador>();
             validador.Setup(e => e.AplicarQuando(TipoDocumento.NFe)).Returns(true);
             FabricaDeNotificador factory = new FabricaDeNotificadorImpl(new[] { validador.Object });
-            Assert.IsTrue(factory.ObterNotificacao(TipoDocumento.NFe) != null);
+            Assert.IsTrue(factory.ObterNotificador(TipoDocumento.NFe) != null);
         }
     }
 }

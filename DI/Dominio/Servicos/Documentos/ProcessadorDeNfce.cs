@@ -16,7 +16,7 @@
         {
             _validador = validaXmlFactory.ObterValidador(TipoDocumento.NFCe);
             _nfces = nfces;
-            _notificador = notificacaoFactory.ObterNotificacao(TipoDocumento.NFCe);
+            _notificador = notificacaoFactory.ObterNotificador(TipoDocumento.NFCe);
         }
 
         public void Processar(string conteudo)

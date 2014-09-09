@@ -28,7 +28,7 @@ namespace DI.Testes.Dominio.Servicos
             notificacao.Setup(e => e.Enviar(""));
 
             var notificacaoFactory = new Mock<FabricaDeNotificador>();
-            notificacaoFactory.Setup(e => e.ObterNotificacao(TipoDocumento.CTe)).Returns(notificacao.Object);
+            notificacaoFactory.Setup(e => e.ObterNotificador(TipoDocumento.CTe)).Returns(notificacao.Object);
 
             ProcessadorDeDocumento processa = new ProcessadorDeCte(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
             processa.Processar("");
@@ -51,7 +51,7 @@ namespace DI.Testes.Dominio.Servicos
             notificacao.Setup(e => e.Enviar(""));
 
             var notificacaoFactory = new Mock<FabricaDeNotificador>();
-            notificacaoFactory.Setup(e => e.ObterNotificacao(TipoDocumento.NFe)).Returns(notificacao.Object);
+            notificacaoFactory.Setup(e => e.ObterNotificador(TipoDocumento.NFe)).Returns(notificacao.Object);
 
             ProcessadorDeDocumento processa = new ProcessadorDeNfe(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
             processa.Processar("");
@@ -74,7 +74,7 @@ namespace DI.Testes.Dominio.Servicos
             notificacao.Setup(e => e.Enviar(""));
 
             var notificacaoFactory = new Mock<FabricaDeNotificador>();
-            notificacaoFactory.Setup(e => e.ObterNotificacao(TipoDocumento.NFCe)).Returns(notificacao.Object);
+            notificacaoFactory.Setup(e => e.ObterNotificador(TipoDocumento.NFCe)).Returns(notificacao.Object);
 
             ProcessadorDeDocumento processa = new ProcessadorDeNfce(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
             processa.Processar("");
