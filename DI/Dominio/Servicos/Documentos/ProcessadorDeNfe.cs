@@ -10,7 +10,7 @@
     {
         private readonly ValidadorDeXml _validacao;
         private readonly Repositorio<Nfe> _nfes;
-        private readonly Notificacao _notificacao;
+        private readonly Notificador _notificacao;
 
         public ProcessadorDeNfe(Repositorio<Nfe> nfes, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {
