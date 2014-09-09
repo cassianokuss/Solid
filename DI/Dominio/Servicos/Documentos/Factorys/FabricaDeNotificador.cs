@@ -3,7 +3,7 @@
     using Infra.Notificaoes;
     using Entidades;
 
-    public interface INotificacaoFactory
+    public interface FabricaDeNotificador
     {
         INotificacao ObterNotificacao(TipoDocumento tipo);
     }

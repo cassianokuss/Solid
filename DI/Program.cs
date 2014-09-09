@@ -80,7 +80,7 @@
             {
                 try
                 {
-                    _container.Resolve<IProcessa>().ProcessarDocumento(documento);
+                    _container.Resolve<Processa>().ProcessarDocumento(documento);
                 }
                 catch (Exception ex)
                 {
@@ -97,22 +97,22 @@
             _container.Kernel.Resolver.AddSubResolver(new ArrayResolver(_container.Kernel));
 
             _container
-                .Register(Component.For<IRepositorioBase<Nfe>>().ImplementedBy<RepositorioBase<Nfe>>())
-                .Register(Component.For<IRepositorioBase<Nfce>>().ImplementedBy<RepositorioBase<Nfce>>())
-                .Register(Component.For<IRepositorioBase<Cte>>().ImplementedBy<RepositorioBase<Cte>>())
+                .Register(Component.For<Repositorio<Nfe>>().ImplementedBy<RepositorioBase<Nfe>>())
+                .Register(Component.For<Repositorio<Nfce>>().ImplementedBy<RepositorioBase<Nfce>>())
+                .Register(Component.For<Repositorio<Cte>>().ImplementedBy<RepositorioBase<Cte>>())
 
-                .Register(Component.For<IProcessa>().ImplementedBy<Processa>().LifeStyle.Singleton)
-                .Register(Component.For<IProcessaDocumentoFactory>().ImplementedBy<ProcessaDocumentoFactory>().LifeStyle.Singleton)
-                .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaNfe>())
-                .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaNfce>())
-                .Register(Component.For<IProcessaDocumento>().ImplementedBy<ProcessaCte>())
+                .Register(Component.For<Processa>().ImplementedBy<ProcessaImpl>().LifeStyle.Singleton)
+                .Register(Component.For<IProcessadorDeDocumentoFactory>().ImplementedBy<FabricaDeProcessadorDeDocumentoImpl>().LifeStyle.Singleton)
+                .Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeNfe>())
+                .Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeNfce>())
+                .Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeCte>())
 
-                .Register(Component.For<IValidaXmlFactory>().ImplementedBy<ValidaXmlFactory>().LifeStyle.Singleton)
-                .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlNfe>())
-                .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlNfce>())
-                .Register(Component.For<IValidaXml>().ImplementedBy<ValidaXmlCte>())
+                .Register(Component.For<FabricaDeValidadorDeXml>().ImplementedBy<FabricaDeValidadorDeXmlImpl>().LifeStyle.Singleton)
+                .Register(Component.For<ValidadorDeXml>().ImplementedBy<ValidadorDeXmlNfe>())
+                .Register(Component.For<ValidadorDeXml>().ImplementedBy<ValidadorDeXmlNfce>())
+                .Register(Component.For<ValidadorDeXml>().ImplementedBy<ValidadorDeXmlCte>())
 
-                .Register(Component.For<INotificacaoFactory>().ImplementedBy<NotificacaoFactory>().LifeStyle.Singleton)
+                .Register(Component.For<FabricaDeNotificador>().ImplementedBy<FabricaDeNotificadorImpl>().LifeStyle.Singleton)
                 .Register(Component.For<INotificacao>().ImplementedBy<Email>())
                 .Register(Component.For<INotificacao>().ImplementedBy<Sms>());
         }

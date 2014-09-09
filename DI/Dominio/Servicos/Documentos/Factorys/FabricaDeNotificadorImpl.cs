@@ -4,11 +4,11 @@
     using Infra.Notificaoes;
     using Entidades;
 
-    public class NotificacaoFactory : INotificacaoFactory
+    public class FabricaDeNotificadorImpl : FabricaDeNotificador
     {
         private readonly INotificacao[] _notificacoes;
 
-        public NotificacaoFactory(params INotificacao[] notificacoes)
+        public FabricaDeNotificadorImpl(params INotificacao[] notificacoes)
         {
             _notificacoes = notificacoes;
         }

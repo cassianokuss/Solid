@@ -19,7 +19,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 </NFe>
 ";
 
-            IValidaXml valida = new ValidaXmlNfe();
+            ValidadorDeXml valida = new ValidadorDeXmlNfe();
             valida.Validar(doc);
             Assert.IsTrue(valida.AplicavelQuando(TipoDocumento.NFe));
         }
@@ -36,7 +36,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 </NFxxxe>
 ";
 
-            IValidaXml valida = new ValidaXmlNfe();
+            ValidadorDeXml valida = new ValidadorDeXmlNfe();
             valida.Validar(doc);
         }
 
@@ -51,7 +51,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 </NFe>
 ";
 
-            var valida = new ValidaXmlNfe();
+            var valida = new ValidadorDeXmlNfe();
             valida.ValidarEstruturaDoXml(doc);
             Assert.IsTrue(valida.AplicavelQuando(TipoDocumento.NFe));
         }
@@ -69,7 +69,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 </NFCxxe>
 ";
 
-            var valida = new ValidaXmlNfe();
+            var valida = new ValidadorDeXmlNfe();
             valida.ValidarEstruturaDoXml(doc);
         }
 
@@ -83,7 +83,7 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 </NFCxxe>
 ";
 
-            var valida = new ValidaXmlNfe();
+            var valida = new ValidadorDeXmlNfe();
             valida.ValidarConteudoDoXml(doc);
         }
     }

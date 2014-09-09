@@ -6,13 +6,13 @@
     using Entidades;
     using Repositorios;
 
-    public class ProcessaNfce : IProcessaDocumento
+    public class ProcessadorDeNfce : ProcessadorDeDocumento
     {
-        private readonly IValidaXml _validacao;
-        private readonly IRepositorioBase<Nfce> _nfces;
+        private readonly ValidadorDeXml _validacao;
+        private readonly Repositorio<Nfce> _nfces;
         private readonly INotificacao _notificacao;
 
-        public ProcessaNfce(IRepositorioBase<Nfce> nfces, IValidaXmlFactory validaXmlFactory, INotificacaoFactory notificacaoFactory)
+        public ProcessadorDeNfce(Repositorio<Nfce> nfces, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {
             _validacao = validaXmlFactory.ObterValidador(TipoDocumento.NFCe);
             _nfces = nfces;

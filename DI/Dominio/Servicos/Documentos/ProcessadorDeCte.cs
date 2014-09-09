@@ -6,13 +6,13 @@
     using Entidades;
     using Repositorios;
 
-    public class ProcessaCte : IProcessaDocumento
+    public class ProcessadorDeCte : ProcessadorDeDocumento
     {
-        private readonly IValidaXml _validacao;
-        private readonly IRepositorioBase<Cte> _ctes;
+        private readonly ValidadorDeXml _validacao;
+        private readonly Repositorio<Cte> _ctes;
         private readonly INotificacao _notificacao;
 
-        public ProcessaCte(IRepositorioBase<Cte> ctes, IValidaXmlFactory validaXmlFactory, INotificacaoFactory notificacaoFactory)
+        public ProcessadorDeCte(Repositorio<Cte> ctes, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {
             _validacao = validaXmlFactory.ObterValidador(TipoDocumento.CTe);
             _ctes = ctes;

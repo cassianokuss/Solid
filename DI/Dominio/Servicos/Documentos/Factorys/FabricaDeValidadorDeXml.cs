@@ -3,8 +3,8 @@
     using Validacoes;
     using Entidades;
 
-    public interface IValidaXmlFactory
+    public interface FabricaDeValidadorDeXml
     {
-        IValidaXml ObterValidador(TipoDocumento tipo);
+        ValidadorDeXml ObterValidador(TipoDocumento tipo);
     }
 }

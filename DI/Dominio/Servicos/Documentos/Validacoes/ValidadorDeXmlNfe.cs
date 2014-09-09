@@ -3,7 +3,7 @@
     using System;
     using Entidades;
 
-    public class ValidaXmlNfe : IValidaXml
+    public class ValidadorDeXmlNfe : ValidadorDeXml
     {
         public void Validar(string documento)
         {

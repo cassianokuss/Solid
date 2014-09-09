@@ -1,8 +1,8 @@
 ﻿namespace DI.Dominio.Servicos
 {
-    using DI.Dominio.Entidades;
+    using Entidades;
 
-    public interface IEstrategiaTipoDocumento
+    public interface EstrategiaPorTipoDeDocumento
     {
         bool AplicavelQuando(TipoDocumento tipo); 
     }

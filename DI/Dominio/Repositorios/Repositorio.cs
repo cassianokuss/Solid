@@ -1,6 +1,6 @@
 ﻿namespace DI.Dominio.Repositorios
 {
-    public interface IRepositorioBase<T>
+    public interface Repositorio<T>
     {
         void Armazenar(T entidade);
     }

@@ -1,6 +1,6 @@
 ﻿namespace DI.Dominio.Servicos.Documentos.Validacoes
 {
-    public interface IValidaXml : IEstrategiaTipoDocumento
+    public interface ValidadorDeXml : EstrategiaPorTipoDeDocumento
     {
         void Validar(string documento);
     }

@@ -11,7 +11,7 @@ namespace DI.Testes.Dominio.Repositorios
         [TestMethod]
         public void ArmazenarDocumento()
         {
-            IRepositorioBase<DocumentoXml> repositorio = new RepositorioBase<DocumentoXml>();
+            Repositorio<DocumentoXml> repositorio = new RepositorioBase<DocumentoXml>();
             repositorio.Armazenar(new DocumentoXml());
             Assert.IsTrue(true);
         }

@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class RepositorioBase<T> : IRepositorioBase<T>
+    public class RepositorioBase<T> : Repositorio<T>
     {
         public void Armazenar(T entidade)
         {

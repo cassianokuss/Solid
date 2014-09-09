@@ -4,16 +4,16 @@
     using System.Linq;
     using Entidades;
 
-    public class ValidaXmlFactory : IValidaXmlFactory
+    public class FabricaDeValidadorDeXmlImpl : FabricaDeValidadorDeXml
     {
-        private readonly IValidaXml[] _validadores;
+        private readonly ValidadorDeXml[] _validadores;
 
-        public ValidaXmlFactory(params IValidaXml[] validadores)
+        public FabricaDeValidadorDeXmlImpl(params ValidadorDeXml[] validadores)
         {
             _validadores = validadores;
         }
 
-        public IValidaXml ObterValidador(TipoDocumento tipo)
+        public ValidadorDeXml ObterValidador(TipoDocumento tipo)
         {
             return _validadores.FirstOrDefault(e => e.AplicavelQuando(tipo));
         }

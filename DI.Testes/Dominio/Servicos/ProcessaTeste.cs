@@ -16,11 +16,11 @@ namespace DI.Testes.Dominio.Servicos
         [TestMethod]
         public void Processa()
         {
-            var processaDocumento = new Mock<IProcessaDocumento>();
+            var processaDocumento = new Mock<ProcessadorDeDocumento>();
             processaDocumento.Setup(e => e.Processar(""));
-            var processaDocumentoFactory = new Mock<IProcessaDocumentoFactory>();
+            var processaDocumentoFactory = new Mock<IProcessadorDeDocumentoFactory>();
             processaDocumentoFactory.Setup(e => e.ObterProcessaDocumento(TipoDocumento.NFe)).Returns(processaDocumento.Object);
-            IProcessa processa = new Processa(processaDocumentoFactory.Object);
+            Processa processa = new ProcessaImpl(processaDocumentoFactory.Object);
             processa.ProcessarDocumento(new DocumentoXml() { Conteudo = "", Tipo = TipoDocumento.NFe });
             Assert.IsTrue(true);
         }

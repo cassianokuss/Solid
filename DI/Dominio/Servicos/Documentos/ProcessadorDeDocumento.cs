@@ -1,6 +1,6 @@
 ﻿namespace DI.Dominio.Servicos.Documentos
 {
-    public interface IProcessaDocumento : IEstrategiaTipoDocumento
+    public interface ProcessadorDeDocumento : EstrategiaPorTipoDeDocumento
     {
         void Processar(string conteudo);
     }
