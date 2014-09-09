@@ -102,7 +102,7 @@
                 .Register(Component.For<Repositorio<Cte>>().ImplementedBy<RepositorioBase<Cte>>())
 
                 .Register(Component.For<Processa>().ImplementedBy<ProcessaImpl>().LifeStyle.Singleton)
-                .Register(Component.For<IProcessadorDeDocumentoFactory>().ImplementedBy<FabricaDeProcessadorDeDocumentoImpl>().LifeStyle.Singleton)
+                .Register(Component.For<FabricaDeProcessadorDeDocumento>().ImplementedBy<FabricaDeProcessadorDeDocumentoImpl>().LifeStyle.Singleton)
                 .Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeNfe>())
                 .Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeNfce>())
                 .Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeCte>())

@@ -5,16 +5,16 @@
 
     public class ProcessaImpl : Processa
     {
-        private readonly IProcessadorDeDocumentoFactory _processaDocumentoFactory;
+        private readonly FabricaDeProcessadorDeDocumento _processaDocumento;
 
-        public ProcessaImpl(IProcessadorDeDocumentoFactory processaDocumentoFactory)
+        public ProcessaImpl(FabricaDeProcessadorDeDocumento processaDocumento)
         {
-            _processaDocumentoFactory = processaDocumentoFactory;
+            _processaDocumento = processaDocumento;
         }
 
         public void ProcessarDocumento(DocumentoXml documento)
         {
-            _processaDocumentoFactory.ObterProcessaDocumento(documento.Tipo).Processar(documento.Conteudo);
+            _processaDocumento.ObterProcessaDocumento(documento.Tipo).Processar(documento.Conteudo);
         }
     }
 }

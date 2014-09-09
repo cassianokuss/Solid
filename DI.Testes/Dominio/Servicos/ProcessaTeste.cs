@@ -18,7 +18,7 @@ namespace DI.Testes.Dominio.Servicos
         {
             var processaDocumento = new Mock<ProcessadorDeDocumento>();
             processaDocumento.Setup(e => e.Processar(""));
-            var processaDocumentoFactory = new Mock<IProcessadorDeDocumentoFactory>();
+            var processaDocumentoFactory = new Mock<FabricaDeProcessadorDeDocumento>();
             processaDocumentoFactory.Setup(e => e.ObterProcessaDocumento(TipoDocumento.NFe)).Returns(processaDocumento.Object);
             Processa processa = new ProcessaImpl(processaDocumentoFactory.Object);
             processa.ProcessarDocumento(new DocumentoXml() { Conteudo = "", Tipo = TipoDocumento.NFe });

@@ -2,7 +2,7 @@
 {
     using Entidades;
 
-    public interface IProcessadorDeDocumentoFactory
+    public interface FabricaDeProcessadorDeDocumento
     {
         ProcessadorDeDocumento ObterProcessaDocumento(TipoDocumento tipo);
     }

@@ -3,7 +3,7 @@
     using System.Linq;
     using Entidades;
 
-    public class FabricaDeProcessadorDeDocumentoImpl : IProcessadorDeDocumentoFactory
+    public class FabricaDeProcessadorDeDocumentoImpl : FabricaDeProcessadorDeDocumento
     {
         private readonly ProcessadorDeDocumento[] _processaDocumentos;
 

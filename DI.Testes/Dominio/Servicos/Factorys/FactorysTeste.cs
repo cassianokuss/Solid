@@ -26,7 +26,7 @@ namespace DI.Testes.Dominio.Servicos.Factorys
         {
             var validador = new Mock<ProcessadorDeDocumento>();
             validador.Setup(e => e.AplicavelQuando(TipoDocumento.NFe)).Returns(true);
-            IProcessadorDeDocumentoFactory factory = new FabricaDeProcessadorDeDocumentoImpl(new[] { validador.Object });
+            FabricaDeProcessadorDeDocumento factory = new FabricaDeProcessadorDeDocumentoImpl(new[] { validador.Object });
             Assert.IsTrue(factory.ObterProcessaDocumento(TipoDocumento.NFe) != null);
         }
 
