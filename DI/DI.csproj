@@ -52,7 +52,7 @@
     <Compile Include="Dominio\Entidades\Nfce.cs" />
     <Compile Include="Dominio\Entidades\Nfe.cs" />
     <Compile Include="Dominio\Servicos\EstrategiaPorTipoDeDocumento.cs" />
-    <Compile Include="Infra\Notificaoes\Notificador.cs" />
+    <Compile Include="Infra\Notificadores\Notificador.cs" />
     <Compile Include="Dominio\Entidades\TipoDocumento.cs" />
     <Compile Include="Dominio\Repositorios\RepositorioBase.cs" />
     <Compile Include="Dominio\Repositorios\Repositorio.cs" />
@@ -60,7 +60,7 @@
     <Compile Include="Dominio\Servicos\Documentos\Fabricas\FabricaDeValidadorDeXml.cs" />
     <Compile Include="Dominio\Servicos\Documentos\Fabricas\FabricaDeNotificador.cs" />
     <Compile Include="Dominio\Servicos\Documentos\Fabricas\FabricaDeNotificadorImpl.cs" />
-    <Compile Include="Dominio\Servicos\Documentos\Validacoes\ValidadorDeXml.cs" />
+    <Compile Include="Dominio\Servicos\Documentos\Validadores\ValidadorDeXml.cs" />
     <Compile Include="Dominio\Servicos\ProcessaImpl.cs" />
     <Compile Include="Dominio\Servicos\Processa.cs" />
     <Compile Include="Dominio\Servicos\Documentos\Fabricas\FabricaDeProcessadorDeDocumentoImpl.cs" />
@@ -68,12 +68,12 @@
     <Compile Include="Dominio\Servicos\Documentos\ProcessadorDeCte.cs" />
     <Compile Include="Dominio\Servicos\Documentos\ProcessadorDeNfce.cs" />
     <Compile Include="Dominio\Servicos\Documentos\ProcessadorDeNfe.cs" />
-    <Compile Include="Dominio\Servicos\Documentos\Validacoes\ValidadorDeXmlCte.cs" />
-    <Compile Include="Dominio\Servicos\Documentos\Validacoes\ValidadorDeXmlNfce.cs" />
-    <Compile Include="Dominio\Servicos\Documentos\Validacoes\ValidadorDeXmlNfe.cs" />
+    <Compile Include="Dominio\Servicos\Documentos\Validadores\ValidadorDeXmlCte.cs" />
+    <Compile Include="Dominio\Servicos\Documentos\Validadores\ValidadorDeXmlNfce.cs" />
+    <Compile Include="Dominio\Servicos\Documentos\Validadores\ValidadorDeXmlNfe.cs" />
     <Compile Include="Dominio\Servicos\Documentos\ProcessadorDeDocumento.cs" />
-    <Compile Include="Infra\Notificaoes\NotificadorPorEmail.cs" />
-    <Compile Include="Infra\Notificaoes\NotificadorPorSms.cs" />
+    <Compile Include="Infra\Notificadores\NotificadorPorEmail.cs" />
+    <Compile Include="Infra\Notificadores\NotificadorPorSms.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
