@@ -1,4 +1,7 @@
-﻿namespace DI
+﻿using DI.Dominio.Servicos.Documentos.Validadores;
+using DI.Infra.Notificadores;
+
+namespace DI
 {
     using System;
     using System.Collections.Generic;
@@ -6,13 +9,10 @@
     using Castle.MicroKernel.Resolvers.SpecializedResolvers;
     using Castle.Windsor;
     using Dominio.Repositorios;
-    using Infra.Notificaoes;
     using Dominio.Entidades;
     using Dominio.Servicos;
     using Dominio.Servicos.Documentos;
     using Dominio.Servicos.Documentos.Fabricas;
-
-    using Dominio.Servicos.Documentos.Validacoes;
 
     class Program
     {
@@ -92,7 +92,7 @@
             Console.ReadKey();
         }
 
-        private static void ConfigurarDI()
+        static void ConfigurarDI()
         {
             _container = new WindsorContainer();
             _container.Kernel.Resolver.AddSubResolver(new ArrayResolver(_container.Kernel));

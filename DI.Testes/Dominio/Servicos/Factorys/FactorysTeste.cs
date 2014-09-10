@@ -2,8 +2,8 @@
 using DI.Dominio.Entidades;
 using DI.Dominio.Servicos.Documentos;
 using DI.Dominio.Servicos.Documentos.Fabricas;
-using DI.Dominio.Servicos.Documentos.Validacoes;
-using DI.Infra.Notificaoes;
+using DI.Dominio.Servicos.Documentos.Validadores;
+using DI.Infra.Notificadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

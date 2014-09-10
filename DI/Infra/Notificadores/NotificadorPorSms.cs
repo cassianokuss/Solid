@@ -1,4 +1,4 @@
-﻿namespace DI.Infra.Notificaoes
+﻿namespace DI.Infra.Notificadores
 {
     using System;
     using Dominio.Entidades;

@@ -1,6 +1,6 @@
 ﻿using System;
 using DI.Dominio.Entidades;
-using DI.Dominio.Servicos.Documentos.Validacoes;
+using DI.Dominio.Servicos.Documentos.Validadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DI.Testes.Dominio.Servicos.Validacoes
@@ -21,6 +21,15 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
 
             ValidadorDeXml valida = new ValidadorDeXmlCte();
             valida.Validar(doc);
+            Assert.IsTrue(valida.AplicarQuando(TipoDocumento.CTe));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void ValidaXmlCteDocNulo()
+        {
+            ValidadorDeXml valida = new ValidadorDeXmlCte();
+            valida.Validar(null);
             Assert.IsTrue(valida.AplicarQuando(TipoDocumento.CTe));
         }
 

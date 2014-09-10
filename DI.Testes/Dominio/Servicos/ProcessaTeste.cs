@@ -3,8 +3,6 @@ using DI.Dominio.Repositorios;
 using DI.Dominio.Servicos;
 using DI.Dominio.Servicos.Documentos;
 using DI.Dominio.Servicos.Documentos.Fabricas;
-using DI.Dominio.Servicos.Documentos.Validacoes;
-using DI.Infra.Notificaoes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

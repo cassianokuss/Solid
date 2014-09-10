@@ -1,7 +1,7 @@
 ﻿namespace DI.Dominio.Servicos.Documentos.Fabricas
 {
-    using Validacoes;
     using Entidades;
+    using Validadores;
 
     public interface FabricaDeValidadorDeXml
     {

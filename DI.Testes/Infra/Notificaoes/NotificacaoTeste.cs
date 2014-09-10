@@ -1,5 +1,5 @@
 ﻿using DI.Dominio.Entidades;
-using DI.Infra.Notificaoes;
+using DI.Infra.Notificadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DI.Testes.Infra.Notificaoes

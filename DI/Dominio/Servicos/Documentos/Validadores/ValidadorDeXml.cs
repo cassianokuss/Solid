@@ -1,4 +1,4 @@
-﻿namespace DI.Dominio.Servicos.Documentos.Validacoes
+﻿namespace DI.Dominio.Servicos.Documentos.Validadores
 {
     public interface ValidadorDeXml : EstrategiaPorTipoDeDocumento
     {

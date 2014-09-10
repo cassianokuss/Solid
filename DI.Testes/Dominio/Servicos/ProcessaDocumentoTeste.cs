@@ -2,8 +2,8 @@
 using DI.Dominio.Repositorios;
 using DI.Dominio.Servicos.Documentos;
 using DI.Dominio.Servicos.Documentos.Fabricas;
-using DI.Dominio.Servicos.Documentos.Validacoes;
-using DI.Infra.Notificaoes;
+using DI.Dominio.Servicos.Documentos.Validadores;
+using DI.Infra.Notificadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
@@ -30,7 +30,13 @@ namespace DI.Testes.Dominio.Servicos
             var notificacaoFactory = new Mock<FabricaDeNotificador>();
             notificacaoFactory.Setup(e => e.ObterNotificador(TipoDocumento.CTe)).Returns(notificacao.Object);
 
-            ProcessadorDeDocumento processa = new ProcessadorDeCte(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
+            var processa = new ProcessadorDeCte
+            {
+                Ctes = rep.Object,
+                ValidaXmlFactory = validaXmlFactory.Object,
+                NotificacaoFactory = notificacaoFactory.Object
+            };
+
             processa.Processar("");
             Assert.IsTrue(processa.AplicarQuando(TipoDocumento.CTe));
         }

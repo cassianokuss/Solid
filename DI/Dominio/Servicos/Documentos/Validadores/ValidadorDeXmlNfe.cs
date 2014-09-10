@@ -1,4 +1,4 @@
-﻿namespace DI.Dominio.Servicos.Documentos.Validacoes
+﻿namespace DI.Dominio.Servicos.Documentos.Validadores
 {
     using System;
     using Entidades;

@@ -1,10 +1,10 @@
 ﻿namespace DI.Dominio.Servicos.Documentos
 {
-    using Validacoes;
-    using Infra.Notificaoes;
     using Entidades;
     using Repositorios;
     using Fabricas;
+    using Validadores;
+    using Infra.Notificadores;
 
     public class ProcessadorDeNfce : ProcessadorDeDocumento
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 using DI.Dominio.Entidades;
-using DI.Dominio.Servicos.Documentos.Validacoes;
+using DI.Dominio.Servicos.Documentos.Validadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DI.Testes.Dominio.Servicos.Validacoes
@@ -22,6 +22,14 @@ namespace DI.Testes.Dominio.Servicos.Validacoes
             ValidadorDeXml valida = new ValidadorDeXmlNfce();
             valida.Validar(doc);
             Assert.IsTrue(valida.AplicarQuando(TipoDocumento.NFCe));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void ValidaXmlNfceDocNulo()
+        {
+            ValidadorDeXml valida = new ValidadorDeXmlNfce();
+            valida.Validar(null);
         }
 
         [TestMethod]
