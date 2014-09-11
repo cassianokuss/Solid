@@ -2,11 +2,14 @@
 {
     public class Cte
     {
-        public Cte(string conteudo)
-        {
-            PropriedadesDoCTe = conteudo;
-        }
-
         public string PropriedadesDoCTe { get; set; }
+
+        public static Cte ObterCte(string conteudo)
+        {
+            return new Cte
+            {
+                PropriedadesDoCTe = conteudo
+            };
+        }
     }
 }

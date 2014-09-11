@@ -12,7 +12,7 @@
         public override void Processar(string conteudo)
         {
             Validar(conteudo);
-            Armazenar(new Cte(conteudo));
+            Armazenar(Cte.ObterCte(conteudo));
             Notificar(conteudo);
         }
     }
