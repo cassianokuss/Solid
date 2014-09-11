@@ -16,7 +16,7 @@ namespace DI.Testes.Dominio.Servicos
         public void ProcessaCte()
         {
             var rep = new Mock<Repositorio<Cte>>();
-            rep.Setup(e => e.Armazenar(new Cte()));
+            rep.Setup(e => e.Armazenar(new Cte("")));
 
             var validaXmlCte = new Mock<ValidadorDeXml>();
             validaXmlCte.Setup(e => e.Validar(""));
@@ -32,7 +32,7 @@ namespace DI.Testes.Dominio.Servicos
 
             var processa = new ProcessadorDeCte
             {
-                Ctes = rep.Object,
+                Repositorio = rep.Object,
                 ValidaXmlFactory = validaXmlFactory.Object,
                 NotificacaoFactory = notificacaoFactory.Object
             };

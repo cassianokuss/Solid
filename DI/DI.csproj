@@ -51,6 +51,7 @@
     <Compile Include="Dominio\Entidades\DocumentoXml.cs" />
     <Compile Include="Dominio\Entidades\Nfce.cs" />
     <Compile Include="Dominio\Entidades\Nfe.cs" />
+    <Compile Include="Dominio\Servicos\Documentos\ProcessadorDeDocumentoBase.cs" />
     <Compile Include="Dominio\Servicos\EstrategiaPorTipoDeDocumento.cs" />
     <Compile Include="Infra\Notificadores\Notificador.cs" />
     <Compile Include="Dominio\Entidades\TipoDocumento.cs" />
