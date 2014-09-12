@@ -1,7 +1,7 @@
-﻿namespace DI.Infra.Notificadores
+﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos.Notificadores
 {
     using System;
-    using Dominio.Entidades;
+    using Entidades;
 
     public class NotificadorPorSms : Notificador
     {

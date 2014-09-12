@@ -1,9 +1,10 @@
 ﻿using DI.Dominio.Entidades;
-using DI.Infra.Notificadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DI.Testes.Infra.Notificaoes
 {
+    using DI.Dominio.Servicos.ProcessamentoDeDocumentos.Notificadores;
+
     [TestClass]
     public class NotificacaoTeste
     {

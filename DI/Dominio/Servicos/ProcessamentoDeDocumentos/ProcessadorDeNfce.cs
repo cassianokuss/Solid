@@ -1,10 +1,10 @@
-﻿namespace DI.Dominio.Servicos.Documentos
+﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos
 {
     using Entidades;
-    using Repositorios;
     using Fabricas;
+    using Notificadores;
+    using Repositorios;
     using Validadores;
-    using Infra.Notificadores;
 
     public class ProcessadorDeNfce : ProcessadorDeDocumento
     {

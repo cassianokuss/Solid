@@ -1,6 +1,6 @@
-﻿namespace DI.Infra.Notificadores
+﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos.Notificadores
 {
-    using Dominio.Servicos;
+    using Servicos;
 
     public interface Notificador : EstrategiaPorTipoDeDocumento
     {

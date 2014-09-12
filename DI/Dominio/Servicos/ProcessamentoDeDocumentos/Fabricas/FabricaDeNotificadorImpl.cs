@@ -1,9 +1,9 @@
-﻿namespace DI.Dominio.Servicos.Documentos.Fabricas
+﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos.Fabricas
 {
     using System.Linq;
     using Entidades;
-    using Infra.Notificadores;
-    
+    using Notificadores;
+
     public class FabricaDeNotificadorImpl : FabricaDeNotificador
     {
         private readonly Notificador[] _notificadores;

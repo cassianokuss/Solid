@@ -1,4 +1,4 @@
-﻿namespace DI.Dominio.Servicos.Documentos
+﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos
 {
     using Entidades;
 

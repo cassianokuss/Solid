@@ -1,8 +1,8 @@
-﻿namespace DI.Dominio.Servicos.Documentos
+﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos
 {
     using Entidades;
-    using Repositorios;
     using Fabricas;
+    using Repositorios;
 
     public abstract class ProcessadorDeDocumentoBase<T> : ProcessadorDeDocumento
     {

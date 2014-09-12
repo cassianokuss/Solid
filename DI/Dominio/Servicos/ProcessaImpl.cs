@@ -1,7 +1,7 @@
 ﻿namespace DI.Dominio.Servicos
 {
     using Entidades;
-    using Documentos.Fabricas;
+    using ProcessamentoDeDocumentos.Fabricas;
 
     public class ProcessaImpl : Processa
     {

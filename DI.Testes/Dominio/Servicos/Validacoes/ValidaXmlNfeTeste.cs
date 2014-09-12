@@ -1,10 +1,11 @@
 ﻿using System;
 using DI.Dominio.Entidades;
-using DI.Dominio.Servicos.Documentos.Validadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace DI.Testes.Dominio.Servicos.Validacoes
 {
+    using DI.Dominio.Servicos.ProcessamentoDeDocumentos.Validadores;
+
     [TestClass]
     public class ValidaXmlNfeTeste
     {

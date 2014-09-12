@@ -1,14 +1,15 @@
 ﻿using DI.Dominio.Entidades;
 using DI.Dominio.Repositorios;
-using DI.Dominio.Servicos.Documentos;
-using DI.Dominio.Servicos.Documentos.Fabricas;
-using DI.Dominio.Servicos.Documentos.Validadores;
-using DI.Infra.Notificadores;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 
 namespace DI.Testes.Dominio.Servicos
 {
+    using DI.Dominio.Servicos.ProcessamentoDeDocumentos;
+    using DI.Dominio.Servicos.ProcessamentoDeDocumentos.Fabricas;
+    using DI.Dominio.Servicos.ProcessamentoDeDocumentos.Notificadores;
+    using DI.Dominio.Servicos.ProcessamentoDeDocumentos.Validadores;
+
     [TestClass]
     public class ProcessaDocumentoTeste
     {

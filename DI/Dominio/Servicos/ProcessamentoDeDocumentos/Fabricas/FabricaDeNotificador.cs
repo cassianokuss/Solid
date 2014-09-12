@@ -1,7 +1,7 @@
-﻿namespace DI.Dominio.Servicos.Documentos.Fabricas
+﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos.Fabricas
 {
-    using Infra.Notificadores;
     using Entidades;
+    using Notificadores;
 
     public interface FabricaDeNotificador
     {

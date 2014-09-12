@@ -1,7 +1,4 @@
-﻿using DI.Dominio.Servicos.Documentos.Validadores;
-using DI.Infra.Notificadores;
-
-namespace DI
+﻿namespace DI
 {
     using System;
     using System.Collections.Generic;
@@ -11,8 +8,10 @@ namespace DI
     using Dominio.Repositorios;
     using Dominio.Entidades;
     using Dominio.Servicos;
-    using Dominio.Servicos.Documentos;
-    using Dominio.Servicos.Documentos.Fabricas;
+    using Dominio.Servicos.ProcessamentoDeDocumentos;
+    using Dominio.Servicos.ProcessamentoDeDocumentos.Fabricas;
+    using Dominio.Servicos.ProcessamentoDeDocumentos.Notificadores;
+    using Dominio.Servicos.ProcessamentoDeDocumentos.Validadores;
 
     class Program
     {
