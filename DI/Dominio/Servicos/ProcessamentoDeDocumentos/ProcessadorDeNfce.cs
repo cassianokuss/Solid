@@ -1,39 +1,19 @@
 ﻿namespace DI.Dominio.Servicos.ProcessamentoDeDocumentos
 {
     using Entidades;
-    using Fabricas;
-    using Notificadores;
-    using Repositorios;
-    using Validadores;
 
-    public class ProcessadorDeNfce : ProcessadorDeDocumento
+    public class ProcessadorDeNfce : ProcessadorDeDocumentoBase<Nfce>
     {
-        private readonly ValidadorDeXml _validador;
-        private readonly Repositorio<Nfce> _nfces;
-        private readonly Notificador _notificador;
-
-        public ProcessadorDeNfce(Repositorio<Nfce> nfces, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
+        public ProcessadorDeNfce()
+            : base(TipoDocumento.NFCe)
         {
-            _validador = validaXmlFactory.ObterValidador(TipoDocumento.NFCe);
-            _nfces = nfces;
-            _notificador = notificacaoFactory.ObterNotificador(TipoDocumento.NFCe);
         }
 
-        public void Processar(string conteudo)
+        public override void Processar(string conteudo)
         {
-            _validador.Validar(conteudo);
-            var nfce = new Nfce()
-                {
-                    PropriedadesDaNFCe = conteudo
-                };
-
-            _nfces.Armazenar(nfce);
-            _notificador.Enviar("Nfce enviada! " + conteudo);
-        }
-
-        public bool AplicarQuando(TipoDocumento tipo)
-        {
-            return tipo == TipoDocumento.NFCe;
+            Validar(conteudo);
+            Armazenar(Nfce.ObterNfce(conteudo));
+            Notificar(conteudo);
         }
     }
 }

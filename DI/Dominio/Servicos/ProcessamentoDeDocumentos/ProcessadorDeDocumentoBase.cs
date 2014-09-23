@@ -8,9 +8,9 @@
     {
         private readonly TipoDocumento _tipoDeDocumento;
 
-        public Repositorio<T> Repositorio { get; set; }
-        public FabricaDeValidadorDeXml ValidaXmlFactory { get; set; }
-        public FabricaDeNotificador NotificacaoFactory { get; set; }
+        public Repositorio<T> Repositorio { protected get; set; }
+        public FabricaDeValidadorDeXml ValidaXmlFactory { protected get; set; }
+        public FabricaDeNotificador NotificacaoFactory { protected get; set; }
 
         protected ProcessadorDeDocumentoBase(TipoDocumento tipoDeDocumento)
         {

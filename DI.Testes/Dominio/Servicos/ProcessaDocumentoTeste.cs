@@ -83,7 +83,7 @@ namespace DI.Testes.Dominio.Servicos
             var notificacaoFactory = new Mock<FabricaDeNotificador>();
             notificacaoFactory.Setup(e => e.ObterNotificador(TipoDocumento.NFCe)).Returns(notificacao.Object);
 
-            ProcessadorDeDocumento processa = new ProcessadorDeNfce(rep.Object, validaXmlFactory.Object, notificacaoFactory.Object);
+            ProcessadorDeDocumento processa = new ProcessadorDeNfce();
             processa.Processar("");
             Assert.IsTrue(processa.AplicarQuando(TipoDocumento.NFCe));
         }
