@@ -11,6 +11,7 @@
         public Repositorio<T> Repositorio { protected get; set; }
         public FabricaDeValidadorDeXml ValidaXmlFactory { protected get; set; }
         public FabricaDeNotificador NotificacaoFactory { protected get; set; }
+        public string Teste { get; set; }
 
         protected ProcessadorDeDocumentoBase(TipoDocumento tipoDeDocumento)
         {

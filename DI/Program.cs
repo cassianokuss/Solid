@@ -1,21 +1,13 @@
 ﻿namespace DI
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
-    using Castle.Facilities.TypedFactory;
-    using Castle.MicroKernel;
-    using Castle.MicroKernel.Context;
-    using Castle.MicroKernel.Resolvers.SpecializedResolvers;
+    using Castle.MicroKernel.Registration;
     using Castle.Windsor;
-    using Dominio.Repositorios;
     using Dominio.Entidades;
     using Dominio.Servicos;
     using Dominio.Servicos.ProcessamentoDeDocumentos;
-    using Dominio.Servicos.ProcessamentoDeDocumentos.Fabricas;
-    using Dominio.Servicos.ProcessamentoDeDocumentos.Notificadores;
-    using Dominio.Servicos.ProcessamentoDeDocumentos.Validadores;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using Component = Castle.MicroKernel.Registration.Component;
 
     class Program
@@ -124,27 +116,43 @@
 
             var container = new WindsorContainer();
 
-            // var fabricaDeProcessadorDeDocumento = new FabricaImpl<ProcessadorDeDocumento, TipoDocumento>(container, new EspecificacaoPorTipoDeDocumento());
-            // fabricaDeProcessadorDeDocumento.Register<ProcessadorDeNfe>(TipoDocumento.NFe);
+            var fabricaDeProcessadorDeDocumento = new Fabrica<ProcessadorDeDocumento, TipoDeDocumento>(container, new EspecificacaoPorTipoDeDocumento());
+            container.Register(fabricaDeProcessadorDeDocumento.Registrar<ProcessadorDeNfce>(new TipoDeDocumento { TipoDoc = TipoDoc.NFCe }).LifestyleTransient());
+            container.Register(fabricaDeProcessadorDeDocumento.Registrar<ProcessadorDeCte>(new TipoDeDocumento { TipoDoc = TipoDoc.CTe }).LifestyleTransient());
 
-            container.Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeNfe>().UsingFactoryMethod((x, b, c) => Fabrica.Obter(new TipoDeDocumento { TipoDoc = TipoDoc.NFe, Versao = 1 }, container, c)));
-            container.Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeCte>().UsingFactoryMethod((x, b, c) => Fabrica.Obter(new TipoDeDocumento { TipoDoc = TipoDoc.CTe, Versao = 1 }, container, c)));
+            container.Register(Component.For<Fabrica<ProcessadorDeDocumento, TipoDeDocumento>>().Instance(fabricaDeProcessadorDeDocumento));
 
-            var a = container.Resolve<ProcessadorDeDocumento>(new TipoDeDocumento { TipoDoc = TipoDoc.NFe, Versao = 1 });
-
+            var f = container.Resolve<Fabrica<ProcessadorDeDocumento, TipoDeDocumento>>();
+            var proc = f.Resolve(new TipoDeDocumento { TipoDoc = TipoDoc.CTe });
+            var proc2 = f.Resolve(new TipoDeDocumento { TipoDoc = TipoDoc.CTe });
+            proc2.Teste = "sdfsdfsd";
         }
     }
 
-    public class Fabrica
+    public class Fabrica<TTipo, TCondicao> where TTipo : class
     {
-        public static ProcessadorDeDocumento Obter(TipoDeDocumento tipo, WindsorContainer container, CreationContext context)
-        {
-            if (tipo == null)
-            {
-                return container.Resolve<ProcessadorDeNfe>();
-            }
+        readonly WindsorContainer _container;
+        readonly IDictionary<string, TCondicao> _registros;
+        readonly IEspecificacao<TCondicao> _especificacao;
 
-            return container.Resolve<ProcessadorDeCte>();
+        public Fabrica(WindsorContainer container, IEspecificacao<TCondicao> especificacao)
+        {
+            _container = container;
+            _registros = new Dictionary<string, TCondicao>();
+            _especificacao = especificacao;
+        }
+
+        public ComponentRegistration<TTipo> Registrar<T>(TCondicao tipoDoc) where T : TTipo
+        {
+            var key = typeof(T).FullName;
+            _registros.Add(key, tipoDoc);
+            return Component.For<TTipo>().Named(key).ImplementedBy<T>();
+        }
+
+        public TTipo Resolve(TCondicao tipo)
+        {
+            var registro = _registros.FirstOrDefault(o => _especificacao.Comparar(o.Value, tipo));
+            return _container.Resolve<TTipo>(registro.Key);
         }
     }
 
@@ -159,5 +167,18 @@
         NFe,
         NFCe,
         CTe
+    }
+
+    public interface IEspecificacao<T>
+    {
+        bool Comparar(T item1, T item2);
+    }
+
+    public class EspecificacaoPorTipoDeDocumento : IEspecificacao<TipoDeDocumento>
+    {
+        public bool Comparar(TipoDeDocumento item1, TipoDeDocumento item2)
+        {
+            return item1.TipoDoc == item2.TipoDoc && ((item1.Versao != 0 && item1.Versao == item2.Versao) || (item1.Versao == 0));
+        }
     }
 }

@@ -11,6 +11,7 @@
         private readonly ValidadorDeXml _validador;
         private readonly Repositorio<Nfe> _nfes;
         private readonly Notificador _notificador;
+        public string Teste { get; set; }
 
         public ProcessadorDeNfe(Repositorio<Nfe> nfes, FabricaDeValidadorDeXml validaXmlFactory, FabricaDeNotificador notificacaoFactory)
         {
