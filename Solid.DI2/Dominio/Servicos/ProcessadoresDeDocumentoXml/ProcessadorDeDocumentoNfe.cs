@@ -1,4 +1,4 @@
-﻿namespace Solid.DI2.Dominio.Servicos.Processadores
+﻿namespace Solid.DI2.Dominio.Servicos.ProcessadoresDeDocumentoXml
 {
     public class ProcessadorDeDocumentoCte : ProcessadorDeDocumentoBase
     {

@@ -49,10 +49,10 @@
   <ItemGroup>
     <Compile Include="Dominio\Entidades\DocumentoXml.cs" />
     <Compile Include="Dominio\Entidades\TipoDeDocumento.cs" />
-    <Compile Include="Dominio\Servicos\Processadores\ProcessadorDeDocumentoBase.cs" />
-    <Compile Include="Dominio\Servicos\Processadores\ProcessadorDeDocumentoNfe.cs" />
-    <Compile Include="Dominio\Servicos\Processadores\ProcessadorDeDocumento.cs" />
-    <Compile Include="Dominio\Servicos\Processadores\ProcessadorDeDocumentoCte.cs" />
+    <Compile Include="Dominio\Servicos\ProcessadoresDeDocumentoXml\ProcessadorDeDocumentoBase.cs" />
+    <Compile Include="Dominio\Servicos\ProcessadoresDeDocumentoXml\ProcessadorDeDocumentoNfe.cs" />
+    <Compile Include="Dominio\Servicos\ProcessadoresDeDocumentoXml\ProcessadorDeDocumento.cs" />
+    <Compile Include="Dominio\Servicos\ProcessadoresDeDocumentoXml\ProcessadorDeDocumentoCte.cs" />
     <Compile Include="Dominio\Servicos\Validadores\ValidadorDeDocumentoNfe.cs" />
     <Compile Include="Dominio\Servicos\Validadores\ValidadorDeDocumentoCteVersao2.cs" />
     <Compile Include="Dominio\Servicos\Validadores\ValidadorDeDocumento.cs" />

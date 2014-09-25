@@ -2,7 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
-    using Castle.MicroKernel.Registration;
+    using System.Linq;
+    using System.Reflection;
+    using Castle.Facilities.TypedFactory;
+    using Castle.MicroKernel;
+    using Castle.MicroKernel.Context;
     using Castle.MicroKernel.Resolvers.SpecializedResolvers;
     using Castle.Windsor;
     using Dominio.Repositorios;
@@ -12,6 +16,7 @@
     using Dominio.Servicos.ProcessamentoDeDocumentos.Fabricas;
     using Dominio.Servicos.ProcessamentoDeDocumentos.Notificadores;
     using Dominio.Servicos.ProcessamentoDeDocumentos.Validadores;
+    using Component = Castle.MicroKernel.Registration.Component;
 
     class Program
     {
@@ -93,7 +98,8 @@
 
         static void ConfigurarDI()
         {
-            _container = new WindsorContainer();
+            //_container = new WindsorContainer();
+            /*
             _container.Kernel.Resolver.AddSubResolver(new ArrayResolver(_container.Kernel));
 
             _container
@@ -114,7 +120,44 @@
 
                 .Register(Component.For<FabricaDeNotificador>().ImplementedBy<FabricaDeNotificadorImpl>().LifeStyle.Singleton)
                 .Register(Component.For<Notificador>().ImplementedBy<NotificadorPorEmail>())
-                .Register(Component.For<Notificador>().ImplementedBy<NotificadorPorSms>());
+                .Register(Component.For<Notificador>().ImplementedBy<NotificadorPorSms>());*/
+
+            var container = new WindsorContainer();
+
+            // var fabricaDeProcessadorDeDocumento = new FabricaImpl<ProcessadorDeDocumento, TipoDocumento>(container, new EspecificacaoPorTipoDeDocumento());
+            // fabricaDeProcessadorDeDocumento.Register<ProcessadorDeNfe>(TipoDocumento.NFe);
+
+            container.Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeNfe>().UsingFactoryMethod((x, b, c) => Fabrica.Obter(new TipoDeDocumento { TipoDoc = TipoDoc.NFe, Versao = 1 }, container, c)));
+            container.Register(Component.For<ProcessadorDeDocumento>().ImplementedBy<ProcessadorDeCte>().UsingFactoryMethod((x, b, c) => Fabrica.Obter(new TipoDeDocumento { TipoDoc = TipoDoc.CTe, Versao = 1 }, container, c)));
+
+            var a = container.Resolve<ProcessadorDeDocumento>(new TipoDeDocumento { TipoDoc = TipoDoc.NFe, Versao = 1 });
+
         }
+    }
+
+    public class Fabrica
+    {
+        public static ProcessadorDeDocumento Obter(TipoDeDocumento tipo, WindsorContainer container, CreationContext context)
+        {
+            if (tipo == null)
+            {
+                return container.Resolve<ProcessadorDeNfe>();
+            }
+
+            return container.Resolve<ProcessadorDeCte>();
+        }
+    }
+
+    public class TipoDeDocumento
+    {
+        public TipoDoc TipoDoc { get; set; }
+        public int Versao { get; set; }
+    }
+
+    public enum TipoDoc
+    {
+        NFe,
+        NFCe,
+        CTe
     }
 }
